@@ -1,0 +1,13 @@
+.card{
+   margin-top: 20px;
+   margin-left: 20px;
+   position: sticky;
+   top: 0;
+}
+.card h5{
+    /* width: 178px; */
+    margin: 0;
+    font-size: 25px;
+    text-align: center;
+    color: #1C2B35;
+}

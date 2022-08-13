@@ -11,7 +11,8 @@ const Shop = () => {
         fetch('products.json')
         .then(res => res.json())
         .then(data => setProducts(data))
-    },[products])
+    },[])
+
     
     const productHandler = (product) => {
         const newProduct = [...card, product]
@@ -30,7 +31,7 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-            <h1>Card: {card.length}</h1>
+                <Card card={card}></Card>
             </div>
         </div>
     );

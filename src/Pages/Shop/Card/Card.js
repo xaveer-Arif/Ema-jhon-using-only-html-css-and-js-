@@ -2,21 +2,23 @@ import React from 'react';
 import "./Card.css"
 
 const Card = ({card}) => {
-    console.log(card)
     let totalPrice = 0;
     let shippingTotal = 0;
+    let quantity = 0;
 
-    for(const selectedProduct of card ){
-        totalPrice= totalPrice + selectedProduct.price;
-        shippingTotal = shippingTotal + selectedProduct.shipping
+    for(const product of card ){
+        quantity = quantity + product.quantity
+        totalPrice= totalPrice + (product.price * product.quantity);
+        shippingTotal = shippingTotal + product.shipping
     }
     
     const tax = parseFloat((totalPrice * .10).toFixed(2))
     const grandTotal = totalPrice + shippingTotal + tax 
+    // console.log(quantity )
     return (
         <div className='card'>
             <h5>Order Summary</h5>
-            <p>Selected Items: {card.length}</p>
+            <p>Selected Items: {quantity}</p>
             <p>Total Price: ${totalPrice}</p>
             <p>Total Shipping: ${shippingTotal}</p>
             <p>Tax: ${tax}</p>
